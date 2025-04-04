@@ -9,6 +9,7 @@ import WatchList from './WatchList'
 import SearchIcon from '@mui/icons-material/Search';
 import { watchlist } from './data/data'
 import DoughnutChart from './DoughnutChart';
+import { useEffect } from 'react';
 
 
 
@@ -16,6 +17,9 @@ import DoughnutChart from './DoughnutChart';
 
 
 const Dashboard = () => {
+
+
+
 
     const labels = watchlist.map((subArray) => subArray['name']);
     const data = {
@@ -60,16 +64,16 @@ const Dashboard = () => {
                             {`${watchlist.length}/50`}
                         </div>
                     </div>
-                 
-                        {
-                            watchlist.map((item, index) => {
-                                
-                                return (
-                                    <WatchList key={index} item={item} />
-                                )
-                            })
-                        }
-                    
+
+                    {
+                        watchlist.map((item, index) => {
+
+                            return (
+                                <WatchList key={index} item={item} />
+                            )
+                        })
+                    }
+
 
                     <div className='my-5'>
                         <DoughnutChart data={data} />
@@ -85,7 +89,7 @@ const Dashboard = () => {
                         <Route path='/dashboard/holdings' element={<Holding />} />
                         <Route path='/dashboard/positions' element={<Position />} />
                         <Route path='/dashboard/funds' element={<Fund />} />
-                        </Routes>
+                    </Routes>
                 </div>
             </div>
 
