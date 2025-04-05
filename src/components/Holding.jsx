@@ -13,7 +13,7 @@ const Holding = () => {
   const [allHoldings, setallHoldings] = useState([]);
 
   useEffect(() => {
-     axios.get('http://localhost:4000/allHoldings')
+     axios.get('https://zerodhadashboarbackend.onrender.com/allHoldings')
       .then(res => {        
         setallHoldings(res.data.data)
       }      )
